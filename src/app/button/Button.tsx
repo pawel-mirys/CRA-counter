@@ -1,19 +1,13 @@
 import styles from "./Button.module.scss";
-import { useState } from "react";
 
 type ButtonProps = {
   text: string;
+  onClickProps?: any;
 };
 
-export const Button = ({ text }: ButtonProps) => {
-  const [count, setCount] = useState(0);
-  const counting = () => {
-    text === "+" ? setCount(count + 1) : setCount(count - 1);
-    console.log(count);
-  };
-
+export const Button = ({ text, onClickProps }: ButtonProps) => {
   return (
-    <button onClick={counting} className={styles.button}>
+    <button onClick={onClickProps} className={styles.button}>
       {text}
     </button>
   );
