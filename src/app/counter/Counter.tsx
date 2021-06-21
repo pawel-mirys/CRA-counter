@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./Counter.module.scss";
 import { Button } from "../button/Button";
 
 export const Counter = () => {
@@ -8,10 +9,10 @@ export const Counter = () => {
     console.log(count);
   };
   return (
-    <div>
-      <Button onClickProps={handleOnClick} text="+" />
-      <h1>{count}</h1>
+    <div className={styles.counterConatiner}>
       <Button onClickProps={handleOnClick} text="-" />
+      <h1>{count}</h1>
+      <Button onClickProps={handleOnClick} text="+" />
     </div>
   );
 };
